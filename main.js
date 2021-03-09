@@ -116,6 +116,15 @@ Example: if you pass it ["a", "b", "c"] and ["d", "e", "f"] then it should retur
 
 NOTE: you can assume each input will be the same length
 */
+/*
+const interleave = (a,b) => {
+
+ return a.reduce((acc,curr,index) => {
+    acc.push(curr, b[index]);
+    return acc;
+ },[]);
+}
+*/
 
 
 function interleave(firstArray, secondArray) {
@@ -170,7 +179,11 @@ If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "br
 */
 
 function flipArray (arrayToFlip) {
-   //let mapToReturn = new Map(arrayToFlip.map(acc, currVal, currIndex => [currIndex.key, acc.val]));
+    let obj = {};
+    arrayToFlip.forEach((curr, index) => {
+        obj[curr] = index;
+    });
+    return obj;
 }
 
 
