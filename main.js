@@ -30,7 +30,9 @@ For example, the tests require that to complete this challenge, your function mu
 results on the index page in the browser.
 */
 
-
+function sum (numbers) {
+    return numbers.reduce((acc, curr) => acc + curr, 0)
+}
 
 
 
@@ -48,9 +50,9 @@ Write function named doubleLetters that will take a string and double every lett
 Example: if you pass it "abc" then it should return "aabbcc"
 */
 
-
-
-
+function doubleLetters(lettersToDouble) {
+   return Array.from(lettersToDouble).reduce((acc, curr) => acc + (curr+curr), "");
+}
 
 
 
@@ -67,7 +69,9 @@ Write function named doubleNumbers that will take an array of numbers and return
 Example: if you pass it [1,2,3] then it should return [2,4,6]
 */
 
-
+function doubleNumbers(numbersToDouble) {
+    return numbersToDouble.map(val => val*2);
+}
 
 
 
@@ -89,6 +93,9 @@ Examples:
 - if you call multiplyNumbers([1,2,3], 5) you'd get [5,10,15]
 */
 
+function multiplyNumbers(numbersToMultiply, multiplier) {
+    return numbersToMultiply.map((num) => num*multiplier);
+}
 
 
 
@@ -111,7 +118,14 @@ NOTE: you can assume each input will be the same length
 */
 
 
-
+function interleave(firstArray, secondArray) {
+    let interleavedArray = [];
+    for(let i=0; i < firstArray.length; i++) {
+        interleavedArray.push(firstArray[i]);
+        interleavedArray.push(secondArray[i]);
+    }
+    return interleavedArray;
+}
 
 
 
@@ -130,7 +144,13 @@ Write function named createRange that will take a number and a default value and
 Example: if you pass it 4 and "Hello" then it should return ["Hello", "Hello", "Hello", "Hello"]
 */
 
-
+function createRange(number, defaultValue) {
+    let arrayOfValues = [];
+    for (let i=number; i > 0; i--) {
+        arrayOfValues.push(defaultValue);
+    }
+    return arrayOfValues;
+} 
 
 
 
@@ -149,7 +169,9 @@ Example:
 If you pass it ["quick", "brown", "fox"] then it should return { "quick": 0, "brown": 1, "fox": 2 }
 */
 
-
+function flipArray (arrayToFlip) {
+   //let mapToReturn = new Map(arrayToFlip.map(acc, currVal, currIndex => [currIndex.key, acc.val]));
+}
 
 
 
